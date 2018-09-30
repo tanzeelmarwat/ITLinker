@@ -1,0 +1,10 @@
+<resources>
+    <!--Application-->
+    <string name="app_name">ITLinker</string>
+
+    <!--Splash Activity-->
+    <string name="welcome_message">Welcome to \n BSIT Linker App</string>
+
+    <!--Signup Activity-->
+    <string name="signup">Signup</string>
+</resources>

@@ -1,0 +1,9 @@
+<resources>
+    <string-array name="user_type">
+        <item>User Type</item>
+        <item>Student</item>
+        <item>Faculty</item>
+        <item>Staff</item>
+        <item>Alumnus</item>
+    </string-array>
+</resources>
