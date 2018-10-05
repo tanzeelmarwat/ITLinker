@@ -1,12 +1,12 @@
-package com.tanzeelmarwat.cslinker.views;
+package com.tanzeelmarwat.itlinker.views;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.tanzeelmarwat.cslinker.R;
+import com.tanzeelmarwat.itlinker.R;
 
 public class LandingActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -21,11 +21,15 @@ public class LandingActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.btn_login:
+            case R.id.btn_login: {
+                Intent intent = new Intent(mContext, LoginActivity.class);
+                startActivity(intent);
+            }
                 break;
-            case R.id.btn_signup:
+            case R.id.btn_signup: {
                 Intent intent = new Intent(mContext, SignupActivity.class);
                 startActivity(intent);
+            }
                 break;
         }
     }

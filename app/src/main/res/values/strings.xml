@@ -6,5 +6,27 @@
     <string name="welcome_message">Welcome to \n BSIT Linker App</string>
 
     <!--Signup Activity-->
+    <string name="title">Title</string>
     <string name="signup">Signup</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="invalid_user_type">Please select user type</string>
+    <string name="empty_name">Name cannot be empty</string>
+    <string name="empty_email">Email cannot be empty</string>
+    <string name="empty_password">Password cannot be empty</string>
+    <string name="empty_confirm_password">Confirm Password cannot be empty</string>
+    <string name="password_miss_match">Password and confirm password donot match</string>
+
+    <!--Login Activity-->
+    <string name="login">Login</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
 </resources>
