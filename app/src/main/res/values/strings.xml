@@ -29,6 +29,36 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
+    <!--Students Fragment-->
+    <string name="students">Students</string>
     <string name="students_fragment">Students Fragment</string>
+
+    <!--Alumni Fragment-->
+    <string name="alumni">Alumni</string>
+    <string name="alumni_fragment">Alumni Fragment</string>
+
+
+    <!--Campus Fragment-->
+    <string name="campus">Campus</string>
+    <string name="campus_fragment">Campus Fragment</string>
+
+
+    <!--Faculty Fragment-->
+    <string name="faculty">Faculty</string>
+    <string name="faculty_fragment">Faculty Fragment</string>
+
+
+    <!--Staff Fragment-->
+    <string name="staff">Staff</string>
+    <string name="staff_fragment">Staff Fragment</string>
+
+
+    <!--Profile Fragment-->
+    <string name="my_profile">My Profile</string>
+    <string name="profile_fragment">Profile Fragment</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
 </resources>

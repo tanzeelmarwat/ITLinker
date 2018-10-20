@@ -48,6 +48,11 @@ public class HomeActivity extends AppCompatActivity
         fragmentTransaction.commitAllowingStateLoss();
         getSupportFragmentManager().executePendingTransactions();
 
+        // set the actionbar title
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle("STUDENTS");
+        }
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
@@ -90,18 +95,66 @@ public class HomeActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        if (id == R.id.alumni) {
+            AlumniFragment alumniFragment = new AlumniFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.container_home, alumniFragment, Constants.FRAGMENT_ALUMNI);
+            fragmentTransaction.commitAllowingStateLoss();
+            getSupportFragmentManager().executePendingTransactions();
+            // set the actionbar title
+            if (getSupportActionBar() != null) {
+                getSupportActionBar().setTitle("ALUMNI");
+            }
+        } else if (id == R.id.students) {
+            StudentsFragment studentsFragment = new StudentsFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.container_home, studentsFragment, Constants.FRAGMENT_STUDENTS);
+            fragmentTransaction.commitAllowingStateLoss();
+            getSupportFragmentManager().executePendingTransactions();
+            // set the actionbar title
+            if (getSupportActionBar() != null) {
+                getSupportActionBar().setTitle("STUDENTS");
+            }
+        } else if (id == R.id.campus) {
+            CampusFragment campusFragment = new CampusFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.container_home, campusFragment, Constants.FRAGMENT_CAMPUS);
+            fragmentTransaction.commitAllowingStateLoss();
+            getSupportFragmentManager().executePendingTransactions();
+            // set the actionbar title
+            if (getSupportActionBar() != null) {
+                getSupportActionBar().setTitle("CAMPUS");
+            }
+        } else if (id == R.id.faculty) {
+            FacultyFragment facultyFragment = new FacultyFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.container_home, facultyFragment, Constants.FRAGMENT_FACULTY);
+            fragmentTransaction.commitAllowingStateLoss();
+            getSupportFragmentManager().executePendingTransactions();
+            // set the actionbar title
+            if (getSupportActionBar() != null) {
+                getSupportActionBar().setTitle("FACULTY");
+            }
+        } else if (id == R.id.staff) {
+            StaffFragment staffFragment = new StaffFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.container_home, staffFragment, Constants.FRAGMENT_STAFF);
+            fragmentTransaction.commitAllowingStateLoss();
+            getSupportFragmentManager().executePendingTransactions();
+            // set the actionbar title
+            if (getSupportActionBar() != null) {
+                getSupportActionBar().setTitle("STAFF");
+            }
+        } else if (id == R.id.profile) {
+            ProfileFragment profileFragment = new ProfileFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.container_home, profileFragment, Constants.FRAGMENT_PROFILE);
+            fragmentTransaction.commitAllowingStateLoss();
+            getSupportFragmentManager().executePendingTransactions();
+            // set the actionbar title
+            if (getSupportActionBar() != null) {
+                getSupportActionBar().setTitle("MY PROFILE");
+            }
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

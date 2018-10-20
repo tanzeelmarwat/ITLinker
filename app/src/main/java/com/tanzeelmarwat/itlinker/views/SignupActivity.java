@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.tanzeelmarwat.itlinker.R;
+import com.tanzeelmarwat.itlinker.utils.Constants;
 
 public class SignupActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -31,6 +32,14 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         etPassword = findViewById(R.id.et_password);
         etConfirmPassword = findViewById(R.id.et_confirm_password);
         tvTitle.setText(getResources().getString(R.string.signup));
+
+        if(Constants.IS_DEBUG_MODE) {
+            spUserType.setSelection(1);
+            etName.setText(Constants.TEST_NAME);
+            etEmail.setText(Constants.TEST_EMAIL);
+            etPassword.setText(Constants.TEST_PASSWORD);
+            etConfirmPassword.setText(Constants.TEST_CONFIRM_PASSWORD);
+        }
     }
 
     @Override
