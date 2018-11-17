@@ -12,7 +12,7 @@ public class Constants {
     public static final boolean IS_DEBUG_MODE = true;
     public static final String TEST_NAME = "Tanzeel Ur Rehman";
     public static final String TEST_EMAIL = "tanzeelmarwat@gmail.com";
-    public static final String TEST_PASSWORD = "password";
+    public static final String TEST_PASSWORD = "111111";
     public static final String TEST_CONFIRM_PASSWORD = "password";
 
 }
