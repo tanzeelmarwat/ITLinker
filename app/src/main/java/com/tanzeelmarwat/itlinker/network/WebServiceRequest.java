@@ -1,5 +1,7 @@
 package com.tanzeelmarwat.itlinker.network;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.tanzeelmarwat.itlinker.models.LoginResponse;
 import com.tanzeelmarwat.itlinker.models.SignupResponse;
 
@@ -27,10 +29,14 @@ public class WebServiceRequest {
         httpClient.readTimeout(120, TimeUnit.SECONDS);
         httpClient.connectTimeout(120, TimeUnit.SECONDS);
         httpClient.writeTimeout(120, TimeUnit.SECONDS);
+
+        Gson gson = new GsonBuilder()
+                .setLenient()
+                .create();
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(API.BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .client(httpClient.build())
+                .addConverterFactory(GsonConverterFactory.create(gson))
+//                .client(httpClient.build())
                 .build();
 
         api = retrofit.create(API.class);

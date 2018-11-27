@@ -10,6 +10,9 @@ public class User {
     String email;
     String contact;
 
+    private static User currentUser;
+
+
     public String getId() {
         return id;
     }
@@ -48,5 +51,13 @@ public class User {
 
     public void setContact(String contact) {
         this.contact = contact;
+    }
+
+    public static User getCurrentUser() {
+        return currentUser;
+    }
+
+    public static void setCurrentUser(User currentUser) {
+        User.currentUser = currentUser;
     }
 }

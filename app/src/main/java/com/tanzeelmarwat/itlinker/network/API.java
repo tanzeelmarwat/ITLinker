@@ -11,9 +11,15 @@ import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface API {
-    public  static String BASE_URL = "http://www.marwatitsolutions.com";
+    public  static String BASE_URL = "http://www.marwatitsolutions.com/linker/";
+    public static String CALL_FLAG = "callFlag";
+    public static String CALL_Message = "callMessage";
+    public static String DATA_RESULT = "dataResult";
+    public static int VOLLEY_TIMEOUT = 15000; // 15 seconds (Unit is milli second)
+    public static String LOGIN = "login.php";
 //    public  static String IMAGE_URL = "http://www.marwatitsolutions.com/linker/images/feeds/";
 //    public  static String API_KEY = "FJ4z@artkO$aDGMhkTYz";
 //    public static int VOLLEY_TIMEOUT = 15000; // 15 seconds (Unit is milli second)
@@ -33,8 +39,11 @@ public interface API {
 //    public static String GET_FEEDS = "get_feeds.php";
 
     @FormUrlEncoded
-    @POST("/linker/login.php")
+    @POST("/linker/login")
     Call<LoginResponse> login(@FieldMap Map<String, Object> parameters);
+
+    @GET("login.php")
+    Call<LoginResponse> getLogin(@Query("email") String email, @Query("password") String password);
 
     @FormUrlEncoded
     @POST("/linker/signup.php")

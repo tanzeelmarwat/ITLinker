@@ -1,6 +1,8 @@
 <resources>
     <!--Application-->
     <string name="app_name">ITLinker</string>
+    <string name="error_internet">Sorry, no internet connectivity</string>
+    <string name="error_empty">Field is empty</string>
 
     <!--Splash Activity-->
     <string name="welcome_message">Welcome to \n BSIT Linker App</string>
