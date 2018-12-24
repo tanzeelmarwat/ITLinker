@@ -20,6 +20,7 @@ import android.widget.Spinner;
 import com.bigkoo.svprogresshud.SVProgressHUD;
 import com.google.common.hash.Hashing;
 import com.tanzeelmarwat.itlinker.R;
+import com.tanzeelmarwat.itlinker.models.UserType;
 
 import java.io.ByteArrayOutputStream;
 import java.nio.charset.Charset;
@@ -143,5 +144,19 @@ public class Utility {
         DisplayMetrics metrics = Resources.getSystem().getDisplayMetrics();
         float px = dp * (metrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT);
         return Math.round(px);
+    }
+
+    public static String getUserTypeId(HashMap<Integer, Object> spinnerMap, String name) {
+        if(spinnerMap != null) {
+            for (int i = 0; i < spinnerMap.size(); i++) {
+                if (spinnerMap.get(i) instanceof UserType) {
+                    UserType userType = (UserType) spinnerMap.get(i);
+                    if (userType.getName().equalsIgnoreCase(name)) {
+                        return userType.getId();
+                    }
+                }
+            }
+        }
+        return "0";
     }
 }

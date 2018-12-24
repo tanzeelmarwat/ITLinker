@@ -15,11 +15,13 @@ import retrofit2.http.Query;
 
 public interface API {
     public  static String BASE_URL = "http://www.marwatitsolutions.com/linker/";
+    public  static String IMAGE_URL = "http://www.marwatitsolutions.com/linker/images/feeds/";
     public static String CALL_FLAG = "callFlag";
     public static String CALL_Message = "callMessage";
     public static String DATA_RESULT = "dataResult";
     public static int VOLLEY_TIMEOUT = 15000; // 15 seconds (Unit is milli second)
     public static String LOGIN = "login.php";
+    public static String GET_FEEDS = "get_feeds.php";
 //    public  static String IMAGE_URL = "http://www.marwatitsolutions.com/linker/images/feeds/";
 //    public  static String API_KEY = "FJ4z@artkO$aDGMhkTYz";
 //    public static int VOLLEY_TIMEOUT = 15000; // 15 seconds (Unit is milli second)

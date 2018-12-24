@@ -2,6 +2,8 @@ package com.tanzeelmarwat.itlinker.models;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.HashMap;
+
 public class User {
     String id;
     @SerializedName("user_type")
@@ -11,6 +13,7 @@ public class User {
     String contact;
 
     private static User currentUser;
+    private static HashMap<Integer, Object> userTypes;
 
 
     public String getId() {
@@ -59,5 +62,13 @@ public class User {
 
     public static void setCurrentUser(User currentUser) {
         User.currentUser = currentUser;
+    }
+
+    public static HashMap<Integer, Object> getUserTypes() {
+        return userTypes;
+    }
+
+    public static void setUserTypes(HashMap<Integer, Object> userTypes) {
+        User.userTypes = userTypes;
     }
 }

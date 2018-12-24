@@ -72,4 +72,43 @@ public class NetworkRequest {
         //Adding request to the request queue
         MyApplication.getInstance().addToRequestQueue(strReq);
     }
+
+    public void getFeeds(final NetworkResponseListener responseListener, final String type) {
+        StringRequest strReq = new StringRequest(Request.Method.POST, API.BASE_URL + API.GET_FEEDS, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.e(Constants.TAG, TAG + " API : " + API.BASE_URL + API.GET_FEEDS + " : response: " + response);
+                try {
+                    JSONObject obj = new JSONObject(response);
+                    // Check for error
+                    if (obj.optBoolean(API.CALL_FLAG)) {
+                        responseListener.onSuccess(response);
+                    } else {
+                        responseListener.onServerError(response);
+                    }
+                } catch (Exception e) {
+                    responseListener.onServerError(e.getMessage());
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                responseListener.onVolleyError(error);
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<>();
+                params.put("type", type);
+                Log.e(Constants.TAG, TAG + " : " + API.BASE_URL + API.GET_FEEDS + " : params : " + params.toString());
+                return params;
+            }
+        };
+        strReq.setRetryPolicy(new DefaultRetryPolicy(
+                API.VOLLEY_TIMEOUT,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        //Adding request to the request queue
+        MyApplication.getInstance().addToRequestQueue(strReq);
+    }
 }

@@ -3,6 +3,7 @@ package com.tanzeelmarwat.itlinker.volley;
 import android.util.Log;
 
 import com.google.gson.Gson;
+import com.tanzeelmarwat.itlinker.models.Feed;
 import com.tanzeelmarwat.itlinker.models.User;
 import com.tanzeelmarwat.itlinker.utils.Constants;
 
@@ -73,5 +74,22 @@ public class NetworkResponseParser {
         }
 
         return users;
+    }
+
+    public HashMap<Integer, Feed> getFeedsParser(JSONArray dataArray) {
+        Gson gson = new Gson();
+        HashMap<Integer, Feed> feeds = new HashMap<Integer, Feed>();
+        try {
+            for (int i = 0; i < dataArray.length(); i++) {
+                Feed feed = gson.fromJson(dataArray.get(i).toString(), Feed.class);
+                feeds.put(i, feed);
+            }
+        } catch (JSONException e) {
+            Log.e(Constants.TAG, TAG + " JSONException : " + e.getMessage());
+        } catch (Exception e) {
+            Log.e(Constants.TAG, TAG + " Exception : " + e.getMessage());
+        }
+
+        return feeds;
     }
 }
